@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Dave Brudner's Pomodoro clock</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="style/style.css">
+
+</head>
+<body>
+	<div class="fluid-container" id="wrapper">
+		<div id="header">
+			Pomodoro Clock
+		</div>
+		<div id="session">
+			<a><button class="button" id="minus-time-session">-</button></a>
+			Session Length
+			<a><button class="button" id="add-time-session">+</button></a>
+		</div>
+		<div id="break">
+			<a><button class="button" id="minus-time-break">-</button></a>
+			Break Length
+			<a><button class="button" id="add-time-break">+</button></a>
+		</div>
+		<div>
+			Session
+		</div>
+		<div id="start">
+			<a><button class="button" id="start">Start</button></a>
+		</div>
+		<div id="timer">
+			Session Length:
+			<span id="minutes">
+				25
+			</span>
+			:
+			<span id="seconds">
+				00
+			</span>
+		</div>
+		<div id="break-timer">
+			Break length:
+			<span id="break-minutes">
+				5
+			</span>
+			:
+			<span id="break-seconds">
+				00
+			</span>
+		</div>
+		<div id="stop">
+			<a><button class="button" id="stop">Stop</button></a>
+		</div>
+		<div id="reset">
+			<a><button class="button" id="reset">Reset</button></a>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="script/script.js"></script>
+</html>
