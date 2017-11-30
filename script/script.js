@@ -27,16 +27,16 @@ var setDefaults = function(){
 	setWorkTime = 0;
 	setBreakTime = 0;
 }
-
+	
 setDefaults();
-
+	totalSeconds=3
 var showTime = function() {
 	breakMinutes.innerHTML = totalMinutesBreak;
 	breakSeconds.innerHTML = totalSecondsBreak;
 	minutes.innerHTML = totalMinutes;
 	seconds.innerHTML = totalSeconds;
 }
-
+	
 showTime();
 //function to countdown seconds. When seconds = 0, subtract 1 minute and countdown seconds again starting from 60
 var currentSeconds = function () {
@@ -49,13 +49,13 @@ var currentSeconds = function () {
 		breakTimerActive = true;
 		return;
 	}
-	if (totalSeconds >= 0) {
+	if (totalSeconds > 0) {
 		totalSeconds--;
 		seconds.innerHTML = totalSeconds;
 	}
-	if (totalSeconds < 0) {
+	if (totalSeconds === 0) {
+		totalSeconds = 60;
 		totalMinutes --;
-		totalSeconds = 59;
 
 		showMinutes();
 	}
@@ -106,7 +106,7 @@ start.onclick = function() {
 }
 //starts countdown
 function countdownSeconds() {
-	startCount = setInterval(currentSeconds, 30);
+	startCount = setInterval(currentSeconds, 1000);
 	showMinutes();
 }
 
@@ -164,7 +164,7 @@ var currentSecondsBreak = function () {
 		totalSecondsBreak--;
 		breakSeconds.innerHTML = totalSecondsBreak;
 	}
-	if (totalSecondsBreak <= 0) {
+	if (totalSecondsBreak < 1) {
 		totalMinutesBreak --;
 		totalSecondsBreak = 59;
 
@@ -177,7 +177,7 @@ function showMinutesBreak() {
 }
 
 function countdownSecondsBreak() {
-	startCountBreak = setInterval(currentSecondsBreak, 30);
+	startCountBreak = setInterval(currentSecondsBreak, 1000);
 	showMinutesBreak();
 	changeStatus("play");
 }
